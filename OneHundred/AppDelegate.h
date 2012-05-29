@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  OneHundred
 //
-//  Created by Kamil Tusznio on 12-05-29.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Kamil Tusznio and Max Woghiren on 12-05-29.
+//  Copyright (c) 2012 Lost City Studios Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

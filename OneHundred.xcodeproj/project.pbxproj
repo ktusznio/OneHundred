@@ -80,7 +80,6 @@
 			children = (
 				8E2221DB15755F1D00DCC508 /* AppDelegate.h */,
 				8E2221DC15755F1D00DCC508 /* AppDelegate.m */,
-				8E2221DE15755F1D00DCC508 /* OneHundred.xcdatamodeld */,
 				8E2221D315755F1D00DCC508 /* Supporting Files */,
 			);
 			path = OneHundred;
@@ -89,6 +88,7 @@
 		8E2221D315755F1D00DCC508 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E2221DE15755F1D00DCC508 /* OneHundred.xcdatamodeld */,
 				8E2221D415755F1D00DCC508 /* OneHundred-Info.plist */,
 				8E2221D515755F1D00DCC508 /* InfoPlist.strings */,
 				8E2221D815755F1D00DCC508 /* main.m */,
@@ -266,6 +266,7 @@
 				8E2221E515755F1D00DCC508 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
