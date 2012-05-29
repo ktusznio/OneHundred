@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 
 #import "BiddingViewController.h"
+#import "DumbComputerPlayer.h"
+#import "Game.h"
+#import "Player.h"
 
 @implementation AppDelegate
 
@@ -23,9 +26,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
+    // Initialize the game and players.
+    Game *game = [[Game alloc] initWithTargetPoints:6 startingMoney:100];
+    Player *player = [[Player alloc] initWithName:@"Max" game:game];
+    DumbComputerPlayer *computerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox" game:game];
+    [game addPlayer:player];
+    [game addPlayer:computerPlayer];
+
     // Set up the navigation controller and its initial view.
     UINavigationController *navigationController = [[UINavigationController alloc] init];
-    BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
+    BiddingViewController *biddingViewController = [[BiddingViewController alloc] initWithPlayer:player];
     [navigationController pushViewController:biddingViewController animated:NO];
     [[self window] setRootViewController:navigationController];
 

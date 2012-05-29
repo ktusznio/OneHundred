@@ -8,9 +8,22 @@
 
 #import "BiddingViewController.h"
 
+#import "Game.h"
+#import "Player.h"
+
 @implementation BiddingViewController
 
-@synthesize bidButton, bidTextField, pointsLabel, remainingMoneyLabel;
+@synthesize bidButton, bidTextField, player, pointsLabel, remainingMoneyLabel;
+
+- (id)initWithPlayer:(Player *)aPlayer {
+    self = [super init];
+
+    if (self) {
+        [self setPlayer:aPlayer];
+    }
+
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -18,6 +31,11 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [remainingMoneyLabel setText:[NSString stringWithFormat:@"$%d", [player money]]];
+    [pointsLabel setText:[NSString stringWithFormat:@"%d out of %d", [player points], [[player currentGame] targetPoints]]];
 }
 
 - (void)viewDidLoad {

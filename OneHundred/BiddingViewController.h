@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class Player;
+
 @interface BiddingViewController : UIViewController
+
+@property (strong, nonatomic) Player *player;
 
 @property (weak, nonatomic) IBOutlet UILabel *remainingMoneyLabel;
 @property (weak, nonatomic) IBOutlet UITextField *bidTextField;
 @property (weak, nonatomic) IBOutlet UIButton *bidButton;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
+
+- (id)initWithPlayer:(Player *)aPlayer;
 
 @end
