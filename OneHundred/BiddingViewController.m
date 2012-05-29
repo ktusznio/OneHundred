@@ -13,13 +13,14 @@
 
 @implementation BiddingViewController
 
-@synthesize bidButton, bidTextField, player, pointsLabel, remainingMoneyLabel;
+@synthesize bidButton, bidTextField, game, player, pointsLabel, remainingMoneyLabel;
 
 - (id)initWithPlayer:(Player *)aPlayer {
     self = [super init];
 
     if (self) {
         [self setPlayer:aPlayer];
+        [self setGame:[aPlayer currentGame]];
     }
 
     return self;
@@ -55,6 +56,29 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (IBAction)onBidButtonTap:(id)sender {
+    // Dismiss the keyboard.
+    [bidTextField resignFirstResponder];
+
+    // Submit the player's bid.
+    NSString *bid = [bidTextField text];
+    if ([bid length] > 0) {
+        // Submit the player's bid.
+        [player submitBid:[bid intValue]];
+
+        // Update the view.
+        [bidTextField setText:@""];
+        [self viewWillAppear:NO];
+    }
+}
+
+#pragma mark UITextFieldDelegate
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

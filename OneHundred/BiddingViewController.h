@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Game;
 @class Player;
 
-@interface BiddingViewController : UIViewController
+@interface BiddingViewController : UIViewController <UITextFieldDelegate>
 
+@property (strong, nonatomic) Game *game;
 @property (strong, nonatomic) Player *player;
 
 @property (weak, nonatomic) IBOutlet UILabel *remainingMoneyLabel;
@@ -20,5 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 
 - (id)initWithPlayer:(Player *)aPlayer;
+
+- (IBAction)onBidButtonTap:(id)sender;
 
 @end

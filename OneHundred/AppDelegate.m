@@ -33,6 +33,9 @@
     [game addPlayer:player];
     [game addPlayer:computerPlayer];
 
+    // Start the first round.
+    [game startNewRound];
+
     // Set up the navigation controller and its initial view.
     UINavigationController *navigationController = [[UINavigationController alloc] init];
     BiddingViewController *biddingViewController = [[BiddingViewController alloc] initWithPlayer:player];

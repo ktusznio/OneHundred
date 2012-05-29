@@ -20,7 +20,7 @@
         [self setTargetPoints:points];
         [self setStartingMoney:money];
         [self setPlayers:[NSMutableArray array]];
-        [self setPlayers:[NSMutableSet set]];
+        [self setPlayersWithBids:[NSMutableSet set]];
     }
 
     return self;
@@ -53,12 +53,18 @@
 }
 
 - (void)acceptBidForPlayer:(Player *)player {
-    // Add the player to the set of players who have bid.
-    [playersWithBids addObject:[player name]];
+    // Check that the bid is valid.
+    if ([player currentBid] >= 0 && [player currentBid] <= [player money]) {
+        // Add the player to the set of players who have bid.
+        [playersWithBids addObject:player];
 
-    // If all players have bid, compute results.
-    if ([playersWithBids count] == [players count]) {
-        [self computeResults];
+        // If all players have bid, compute results.
+        if ([playersWithBids count] == [players count]) {
+            [self computeResults];
+        }
+    } else {
+        // Invalid bid.
+        // TODO: Show error message.
     }
 }
 
