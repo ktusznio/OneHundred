@@ -11,7 +11,7 @@
 
 @implementation Player
 
-@synthesize name, currentGame, money, points, currentBid;
+@synthesize name, currentGame, money, points, bidRequested, currentBid;
 
 - (id)initWithName:(NSString *)playerName game:(Game *)game {
     self = [super init];
@@ -21,6 +21,7 @@
         [self setCurrentGame:game];
         [self setMoney:[game startingMoney]];
         [self setPoints:0];
+        [self setBidRequested:NO];
         [self setCurrentBid:0];
     }
 
@@ -29,6 +30,7 @@
 
 - (void)submitBid:(int)bid {
     [self setCurrentBid:bid];
+    [self setBidRequested:NO];
     [self notifyGameOfBid];
 }
 

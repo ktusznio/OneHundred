@@ -32,7 +32,7 @@
 
 - (void)startNewRound {
     [self clearPlayersWithBids];
-    [self obtainComputerBids];
+    [self obtainPlayerBids];
 }
 
 - (void)clearPlayersWithBids {
@@ -40,9 +40,12 @@
     [[self playersWithBids] removeAllObjects];
 }
 
-- (void)obtainComputerBids {
-    // Ask all of the computer players to make their bids.
+- (void)obtainPlayerBids {
+    // Ask all of the players to make their bids.
     for (Player *player in [self players]) {
+        [player setBidRequested:YES];
+
+        // Computer players will make their bids right away.
         if ([player isKindOfClass:[ComputerPlayer class]]) {
             [(ComputerPlayer *)player computeAndSubmitBid];
         }

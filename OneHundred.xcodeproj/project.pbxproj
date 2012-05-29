@@ -110,10 +110,10 @@
 		8E2221D215755F1D00DCC508 /* OneHundred */ = {
 			isa = PBXGroup;
 			children = (
-				8E2221EA1575625B00DCC508 /* View Controllers */,
 				8E2221DB15755F1D00DCC508 /* AppDelegate.h */,
 				8E2221DC15755F1D00DCC508 /* AppDelegate.m */,
 				50FC376D15757B1D008D47AF /* Game Classes */,
+				8E2221EA1575625B00DCC508 /* View Controllers */,
 				8E2221D315755F1D00DCC508 /* Supporting Files */,
 			);
 			path = OneHundred;

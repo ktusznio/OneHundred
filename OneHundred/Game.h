@@ -21,7 +21,7 @@
 - (void)addPlayer:(Player *)player;
 - (void)startNewRound;
 - (void)clearPlayersWithBids;
-- (void)obtainComputerBids;
+- (void)obtainPlayerBids;
 - (void)acceptBidForPlayer:(Player *)player;
 - (void)computeResults;
 - (void)declareWinner:(Player *)winner;

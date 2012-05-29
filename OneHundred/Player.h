@@ -16,6 +16,7 @@
 @property (strong, nonatomic) Game *currentGame;
 @property (nonatomic) int money;
 @property (nonatomic) int points;
+@property (nonatomic) BOOL bidRequested;
 @property (nonatomic) int currentBid;
 
 - (id)initWithName:(NSString *)playerName game:(Game *)game;
