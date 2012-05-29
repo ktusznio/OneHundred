@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50FC375F15756327008D47AF /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC375E15756327008D47AF /* Player.m */; };
+		50FC376615756663008D47AF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC376515756663008D47AF /* Game.m */; };
+		50FC376915756CAB008D47AF /* ComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC376815756CAB008D47AF /* ComputerPlayer.m */; };
+		50FC376C15756D7D008D47AF /* DumbComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC376B15756D7C008D47AF /* DumbComputerPlayer.m */; };
 		8E2221CB15755F1D00DCC508 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2221CA15755F1D00DCC508 /* UIKit.framework */; };
 		8E2221CD15755F1D00DCC508 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2221CC15755F1D00DCC508 /* Foundation.framework */; };
 		8E2221CF15755F1D00DCC508 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2221CE15755F1D00DCC508 /* CoreGraphics.framework */; };
@@ -20,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50FC375D15756327008D47AF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		50FC375E15756327008D47AF /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		50FC376415756663008D47AF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		50FC376515756663008D47AF /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		50FC376715756CAB008D47AF /* ComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComputerPlayer.h; sourceTree = "<group>"; };
+		50FC376815756CAB008D47AF /* ComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerPlayer.m; sourceTree = "<group>"; };
+		50FC376A15756D7C008D47AF /* DumbComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DumbComputerPlayer.h; sourceTree = "<group>"; };
+		50FC376B15756D7C008D47AF /* DumbComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DumbComputerPlayer.m; sourceTree = "<group>"; };
 		8E2221C615755F1D00DCC508 /* OneHundred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneHundred.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E2221CA15755F1D00DCC508 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8E2221CC15755F1D00DCC508 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,6 +64,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50FC376D15757B1D008D47AF /* Game Classes */ = {
+			isa = PBXGroup;
+			children = (
+				50FC376415756663008D47AF /* Game.h */,
+				50FC376515756663008D47AF /* Game.m */,
+				50FC375D15756327008D47AF /* Player.h */,
+				50FC375E15756327008D47AF /* Player.m */,
+				50FC376715756CAB008D47AF /* ComputerPlayer.h */,
+				50FC376815756CAB008D47AF /* ComputerPlayer.m */,
+				50FC376A15756D7C008D47AF /* DumbComputerPlayer.h */,
+				50FC376B15756D7C008D47AF /* DumbComputerPlayer.m */,
+			);
+			name = "Game Classes";
+			sourceTree = "<group>";
+		};
 		8E2221BB15755F1C00DCC508 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +113,7 @@
 				8E2221EA1575625B00DCC508 /* View Controllers */,
 				8E2221DB15755F1D00DCC508 /* AppDelegate.h */,
 				8E2221DC15755F1D00DCC508 /* AppDelegate.m */,
+				50FC376D15757B1D008D47AF /* Game Classes */,
 				8E2221D315755F1D00DCC508 /* Supporting Files */,
 			);
 			path = OneHundred;
@@ -179,6 +207,10 @@
 				8E2221DD15755F1D00DCC508 /* AppDelegate.m in Sources */,
 				8E2221E015755F1D00DCC508 /* OneHundred.xcdatamodeld in Sources */,
 				8E2221EF157562B700DCC508 /* BiddingViewController.m in Sources */,
+				50FC375F15756327008D47AF /* Player.m in Sources */,
+				50FC376615756663008D47AF /* Game.m in Sources */,
+				50FC376915756CAB008D47AF /* ComputerPlayer.m in Sources */,
+				50FC376C15756D7D008D47AF /* DumbComputerPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
