@@ -15,6 +15,8 @@
 		8E2221D915755F1D00DCC508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2221D815755F1D00DCC508 /* main.m */; };
 		8E2221DD15755F1D00DCC508 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2221DC15755F1D00DCC508 /* AppDelegate.m */; };
 		8E2221E015755F1D00DCC508 /* OneHundred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E2221DE15755F1D00DCC508 /* OneHundred.xcdatamodeld */; };
+		8E2221EF157562B700DCC508 /* BiddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2221ED157562B700DCC508 /* BiddingViewController.m */; };
+		8E2221F0157562B700DCC508 /* BiddingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2221EE157562B700DCC508 /* BiddingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,9 @@
 		8E2221DB15755F1D00DCC508 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8E2221DC15755F1D00DCC508 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8E2221DF15755F1D00DCC508 /* OneHundred.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OneHundred.xcdatamodel; sourceTree = "<group>"; };
+		8E2221EC157562B700DCC508 /* BiddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiddingViewController.h; sourceTree = "<group>"; };
+		8E2221ED157562B700DCC508 /* BiddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiddingViewController.m; sourceTree = "<group>"; };
+		8E2221EE157562B700DCC508 /* BiddingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiddingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 		8E2221D215755F1D00DCC508 /* OneHundred */ = {
 			isa = PBXGroup;
 			children = (
+				8E2221EA1575625B00DCC508 /* View Controllers */,
 				8E2221DB15755F1D00DCC508 /* AppDelegate.h */,
 				8E2221DC15755F1D00DCC508 /* AppDelegate.m */,
 				8E2221D315755F1D00DCC508 /* Supporting Files */,
@@ -95,6 +101,16 @@
 				8E2221DA15755F1D00DCC508 /* OneHundred-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E2221EA1575625B00DCC508 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E2221EC157562B700DCC508 /* BiddingViewController.h */,
+				8E2221ED157562B700DCC508 /* BiddingViewController.m */,
+				8E2221EE157562B700DCC508 /* BiddingViewController.xib */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E2221D715755F1D00DCC508 /* InfoPlist.strings in Resources */,
+				8E2221F0157562B700DCC508 /* BiddingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +178,7 @@
 				8E2221D915755F1D00DCC508 /* main.m in Sources */,
 				8E2221DD15755F1D00DCC508 /* AppDelegate.m in Sources */,
 				8E2221E015755F1D00DCC508 /* OneHundred.xcdatamodeld in Sources */,
+				8E2221EF157562B700DCC508 /* BiddingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
