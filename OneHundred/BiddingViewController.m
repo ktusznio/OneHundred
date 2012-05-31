@@ -40,9 +40,13 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
     int opponentCount = 0;
     for (Player *player in [game players]) {
         if (player != activePlayer) {
+            // Create the view for this opponent and add it to the opponents' view.
             UIView *opponentView = [self opponentViewForPlayer:player
                                                          index:opponentCount];
             [[self opponentsView] addSubview:opponentView];
+
+            // Increment the opponent count.
+            opponentCount++;
         }
     }
 }
