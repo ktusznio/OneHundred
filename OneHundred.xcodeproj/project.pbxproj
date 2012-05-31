@@ -24,6 +24,8 @@
 		8E2221E015755F1D00DCC508 /* OneHundred.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E2221DE15755F1D00DCC508 /* OneHundred.xcdatamodeld */; };
 		8E2221EF157562B700DCC508 /* BiddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2221ED157562B700DCC508 /* BiddingViewController.m */; };
 		8E2221F0157562B700DCC508 /* BiddingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2221EE157562B700DCC508 /* BiddingViewController.xib */; };
+		8EC4A84D157808460005E8F7 /* OpponentSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */; };
+		8EC4A84E157808460005E8F7 /* OpponentSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,9 @@
 		8E2221EC157562B700DCC508 /* BiddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiddingViewController.h; sourceTree = "<group>"; };
 		8E2221ED157562B700DCC508 /* BiddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiddingViewController.m; sourceTree = "<group>"; };
 		8E2221EE157562B700DCC508 /* BiddingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BiddingViewController.xib; sourceTree = "<group>"; };
+		8EC4A84A157808460005E8F7 /* OpponentSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpponentSelectionViewController.h; sourceTree = "<group>"; };
+		8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpponentSelectionViewController.m; sourceTree = "<group>"; };
+		8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpponentSelectionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +155,9 @@
 				5042A58F1577403A004897D9 /* GameOverViewController.h */,
 				5042A5901577403A004897D9 /* GameOverViewController.m */,
 				5042A5911577403A004897D9 /* GameOverViewController.xib */,
+				8EC4A84A157808460005E8F7 /* OpponentSelectionViewController.h */,
+				8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */,
+				8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -207,6 +215,7 @@
 				8E2221D715755F1D00DCC508 /* InfoPlist.strings in Resources */,
 				8E2221F0157562B700DCC508 /* BiddingViewController.xib in Resources */,
 				5042A5931577403A004897D9 /* GameOverViewController.xib in Resources */,
+				8EC4A84E157808460005E8F7 /* OpponentSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +236,7 @@
 				50FC376C15756D7D008D47AF /* DumbComputerPlayer.m in Sources */,
 				5042A5921577403A004897D9 /* GameOverViewController.m in Sources */,
 				5042A596157743B7004897D9 /* RandomComputerPlayer.m in Sources */,
+				8EC4A84D157808460005E8F7 /* OpponentSelectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

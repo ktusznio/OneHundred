@@ -8,11 +8,9 @@
 
 #import "AppDelegate.h"
 
-#import "BiddingViewController.h"
-#import "DumbComputerPlayer.h"
+#import "OpponentSelectionViewController.h"
 #import "Game.h"
 #import "Player.h"
-#import "RandomComputerPlayer.h"
 
 @implementation AppDelegate
 
@@ -28,28 +26,17 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
-    // Create the players.
+    // Create the user's player.
     [self setActivePlayer:[[Player alloc] initWithName:@"Max"]];
-    DumbComputerPlayer *dumbComputerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox"];
-    RandomComputerPlayer *randomComputerPlayer = [[RandomComputerPlayer alloc] initWithName:@"Wepqup"];
 
     // Initialize the game.
     [self setCurrentGame:[[Game alloc] initWithTargetPoints:6 startingMoney:100]];
     [currentGame addPlayer:[self activePlayer]];
-    [currentGame addPlayer:dumbComputerPlayer];
-    [currentGame addPlayer:randomComputerPlayer];
 
     // Set up the navigation controller and its initial view.
     UINavigationController *navigationController = [[UINavigationController alloc] init];
-    BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
-    [navigationController pushViewController:biddingViewController animated:NO];
+    [navigationController pushViewController:[[OpponentSelectionViewController alloc] init] animated:NO];
     [[self window] setRootViewController:navigationController];
-
-    // Set the game's delegate.
-    [currentGame setDelegate:biddingViewController];
-
-    // Start the game.
-    [currentGame startGame];
 
     return YES;
 }
