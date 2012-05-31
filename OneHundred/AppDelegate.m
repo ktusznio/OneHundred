@@ -20,6 +20,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize currentGame, activePlayer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -28,27 +29,27 @@
     [self.window makeKeyAndVisible];
 
     // Create the players.
-    Player *player = [[Player alloc] initWithName:@"Max"];
+    [self setActivePlayer:[[Player alloc] initWithName:@"Max"]];
     DumbComputerPlayer *dumbComputerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox"];
     RandomComputerPlayer *randomComputerPlayer = [[RandomComputerPlayer alloc] initWithName:@"Wepqup"];
 
     // Initialize the game.
-    Game *game = [[Game alloc] initWithTargetPoints:6 startingMoney:100];
-    [game addPlayer:player];
-    [game addPlayer:dumbComputerPlayer];
-    [game addPlayer:randomComputerPlayer];
+    [self setCurrentGame:[[Game alloc] initWithTargetPoints:6 startingMoney:100]];
+    [currentGame addPlayer:[self activePlayer]];
+    [currentGame addPlayer:dumbComputerPlayer];
+    [currentGame addPlayer:randomComputerPlayer];
 
     // Set up the navigation controller and its initial view.
     UINavigationController *navigationController = [[UINavigationController alloc] init];
-    BiddingViewController *biddingViewController = [[BiddingViewController alloc] initForGame:game activePlayer:player];
+    BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
     [navigationController pushViewController:biddingViewController animated:NO];
     [[self window] setRootViewController:navigationController];
 
     // Set the game's delegate.
-    [game setDelegate:biddingViewController];
+    [currentGame setDelegate:biddingViewController];
 
     // Start the game.
-    [game startGame];
+    [currentGame startGame];
 
     return YES;
 }

@@ -15,17 +15,11 @@
 
 @interface BiddingViewController : UIViewController <GameDelegate, UITextFieldDelegate>
 
-@property (strong, nonatomic) Game *game;
-@property (strong, nonatomic) Player *activePlayer;
-
 @property (weak, nonatomic) IBOutlet UILabel *activePlayerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *activePlayerDataLabel;
 @property (weak, nonatomic) IBOutlet UITextField *bidTextField;
 @property (weak, nonatomic) IBOutlet UIButton *bidButton;
 @property (weak, nonatomic) IBOutlet UIView *opponentsView;
-
-- (id)initForGame:(Game *)aGame
-     activePlayer:(Player *)anActivePlayer;
 
 - (IBAction)onBidButtonTap:(id)sender;
 - (UIView *)opponentViewForPlayer:(Player *)player

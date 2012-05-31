@@ -7,39 +7,32 @@
 //
 
 #import "BiddingViewController.h"
-#import "GameOverViewController.h"
 
+#import "AppDelegate.h"
 #import "Game.h"
+#import "GameOverViewController.h"
 #import "Player.h"
 
 @implementation BiddingViewController
 
-@synthesize activePlayer, activePlayerDataLabel, activePlayerNameLabel, bidButton, bidTextField, game, opponentsView;
+@synthesize activePlayerDataLabel, activePlayerNameLabel, bidButton, bidTextField, opponentsView;
 
 const CGFloat OPPONENT_VIEW_HEIGHT = 40;
 const CGFloat NAME_LABEL_HEIGHT = 20;
 const CGFloat DATA_LABEL_HEIGHT = 20;
 
-- (id)initForGame:(Game *)aGame
-     activePlayer:(Player *)anActivePlayer {
-    self = [super init];
-
-    if (self) {
-        [self setGame:aGame];
-        [self setActivePlayer:anActivePlayer];
-    }
-
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated {
+    // Get the current game and active player.
+    Game *currentGame = [(AppDelegate *)[[UIApplication sharedApplication] delegate] currentGame];
+    Player *activePlayer = [(AppDelegate *)[[UIApplication sharedApplication] delegate] activePlayer];
+
     // Set up the active player's view.
     [activePlayerNameLabel setText:[activePlayer name]];
     [activePlayerDataLabel setText:[NSString stringWithFormat:@"%d / %d / %d", [activePlayer money], [activePlayer points], [activePlayer previousBid]]];
 
     // Set up the opponents' view.
     int opponentCount = 0;
-    for (Player *player in [game players]) {
+    for (Player *player in [currentGame players]) {
         if (player != activePlayer) {
             // Create the view for this opponent and add it to the opponents' view.
             UIView *opponentView = [self opponentViewForPlayer:player
@@ -72,6 +65,9 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
 - (IBAction)onBidButtonTap:(id)sender {
     // Dismiss the keyboard.
     [bidTextField resignFirstResponder];
+
+    // Get the active player.
+    Player *activePlayer = [(AppDelegate *)[[UIApplication sharedApplication] delegate] activePlayer];
 
     // If the player entered a valid bid, submit it.  Otherwise, let the player know.
     NSString *bid = [bidTextField text];
@@ -110,9 +106,12 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
 #pragma mark GameDelegate
 
 - (void)gameWillBegin {
+    // Get the current game.
+    Game *currentGame = [(AppDelegate *)[[UIApplication sharedApplication] delegate] currentGame];
+
     // Have each player prepare for the game.
-    for (Player *player in [game players]) {
-        [player prepareForGame:game];
+    for (Player *player in [currentGame players]) {
+        [player prepareForGame:currentGame];
     }
 }
 
