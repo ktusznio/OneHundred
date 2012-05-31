@@ -20,12 +20,12 @@ const CGFloat OPPONENT_VIEW_HEIGHT = 40;
 const CGFloat NAME_LABEL_HEIGHT = 20;
 const CGFloat DATA_LABEL_HEIGHT = 20;
 
-- (id)initWithPlayer:(Player *)aPlayer {
+- (id)initWithActivePlayer:(Player *)anActivePlayer {
     self = [super init];
 
     if (self) {
-        [self setActivePlayer:aPlayer];
-        [self setGame:[aPlayer currentGame]];
+        [self setActivePlayer:anActivePlayer];
+        [self setGame:[anActivePlayer currentGame]];
     }
 
     return self;

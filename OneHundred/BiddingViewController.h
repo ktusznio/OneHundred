@@ -24,7 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (weak, nonatomic) IBOutlet UIView *opponentsView;
 
-- (id)initWithPlayer:(Player *)aPlayer;
+- (id)initWithActivePlayer:(Player *)anActivePlayer;
 
 - (IBAction)onBidButtonTap:(id)sender;
 - (UIView *)opponentViewForPlayer:(Player *)player

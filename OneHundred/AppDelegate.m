@@ -12,6 +12,7 @@
 #import "DumbComputerPlayer.h"
 #import "Game.h"
 #import "Player.h"
+#import "RandomComputerPlayer.h"
 
 @implementation AppDelegate
 
@@ -29,16 +30,16 @@
     // Initialize the game and players.
     Game *game = [[Game alloc] initWithTargetPoints:6 startingMoney:100];
     Player *player = [[Player alloc] initWithName:@"Max" game:game];
-    DumbComputerPlayer *computerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox" game:game];
+    DumbComputerPlayer *dumbComputerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox" game:game];
     [game addPlayer:player];
-    [game addPlayer:computerPlayer];
+    [game addPlayer:dumbComputerPlayer];
 
     // Start the first round.
     [game startNewRound];
 
     // Set up the navigation controller and its initial view.
     UINavigationController *navigationController = [[UINavigationController alloc] init];
-    BiddingViewController *biddingViewController = [[BiddingViewController alloc] initWithPlayer:player];
+    BiddingViewController *biddingViewController = [[BiddingViewController alloc] initWithActivePlayer:player];
     [navigationController pushViewController:biddingViewController animated:NO];
     [[self window] setRootViewController:navigationController];
 
