@@ -7,6 +7,7 @@
 //
 
 #import "BiddingViewController.h"
+#import "GameOverViewController.h"
 
 #import "Game.h"
 #import "Player.h"
@@ -48,7 +49,6 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload {
@@ -58,8 +58,6 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
     [self setPointsLabel:nil];
     [self setOpponentsView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -108,6 +106,12 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
 
 - (void)roundWillBegin {
     [self viewWillAppear:NO];
+}
+
+- (void)gameDidEnd:(Player *)winner {
+    GameOverViewController *gameOverViewController = [[GameOverViewController alloc] initForWinner:winner];
+    [[self navigationController] pushViewController:gameOverViewController
+                                           animated:YES];
 }
 
 #pragma mark UITextFieldDelegate

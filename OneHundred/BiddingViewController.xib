@@ -225,7 +225,7 @@
 						<reference key="IBUIFontDescription" ref="491297060"/>
 						<reference key="IBUIFont" ref="799333104"/>
 					</object>
-					<object class="IBUIView" id="612865440">
+					<object class="IBUIView" id="180462685">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{300, 43}, {160, 237}}</string>
@@ -240,7 +240,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrame">{{0, 20}, {480, 300}}</string>
+				<string key="NSFrame">{{0, 64}, {480, 256}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="565222595"/>
@@ -250,6 +250,9 @@
 					<reference key="NSCustomColorSpace" ref="917210141"/>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
+				<object class="IBUISimulatedNavigationBarMetrics" key="IBUISimulatedTopBarMetrics">
+					<bool key="IBUIPrompted">NO</bool>
+				</object>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
 					<int key="IBUIInterfaceOrientation">3</int>
 					<int key="interfaceOrientation">3</int>
@@ -303,7 +306,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">opponentsView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="612865440"/>
+						<reference key="destination" ref="180462685"/>
 					</object>
 					<int key="connectionID">18</int>
 				</object>
@@ -335,7 +338,7 @@
 							<reference ref="570789379"/>
 							<reference ref="545452404"/>
 							<reference ref="188965030"/>
-							<reference ref="612865440"/>
+							<reference ref="180462685"/>
 							<reference ref="895880927"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -388,7 +391,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
-						<reference key="object" ref="612865440"/>
+						<reference key="object" ref="180462685"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

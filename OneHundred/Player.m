@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 Lost City Studios Inc. All rights reserved.
 //
 
-#import "Game.h"
 #import "Player.h"
+
+#import "Game.h"
 
 @implementation Player
 

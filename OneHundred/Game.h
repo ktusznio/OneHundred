@@ -13,6 +13,7 @@
 @protocol GameDelegate
 
 - (void)roundWillBegin;
+- (void)gameDidEnd:(Player *)winner;
 
 @end
 

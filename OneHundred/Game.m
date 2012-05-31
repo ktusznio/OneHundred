@@ -6,8 +6,9 @@
 //  Copyright (c) 2012 Lost City Studios Inc. All rights reserved.
 //
 
-#import "ComputerPlayer.h"
 #import "Game.h"
+
+#import "ComputerPlayer.h"
 
 @implementation Game
 
@@ -102,7 +103,7 @@
 }
 
 - (void)declareWinner:(Player *)winner {
-    // Declare the winner!
+    [[self delegate] gameDidEnd:winner];
 }
 
 @end
