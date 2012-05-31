@@ -14,7 +14,7 @@
 
 @implementation BiddingViewController
 
-@synthesize opponentsView, bidButton, bidTextField, game, activePlayer, pointsLabel, remainingMoneyLabel;
+@synthesize activePlayer, activePlayerDataLabel, activePlayerNameLabel, bidButton, bidTextField, game, opponentsView;
 
 const CGFloat OPPONENT_VIEW_HEIGHT = 40;
 const CGFloat NAME_LABEL_HEIGHT = 20;
@@ -33,8 +33,8 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
 
 - (void)viewWillAppear:(BOOL)animated {
     // Set up the active player's view.
-    [remainingMoneyLabel setText:[NSString stringWithFormat:@"$%d", [activePlayer money]]];
-    [pointsLabel setText:[NSString stringWithFormat:@"%d out of %d", [activePlayer points], [[activePlayer currentGame] targetPoints]]];
+    [activePlayerNameLabel setText:[activePlayer name]];
+    [activePlayerDataLabel setText:[NSString stringWithFormat:@"%d / %d / %d", [activePlayer money], [activePlayer points], [activePlayer previousBid]]];
 
     // Set up the opponents' view.
     int opponentCount = 0;
@@ -56,11 +56,11 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
 }
 
 - (void)viewDidUnload {
-    [self setRemainingMoneyLabel:nil];
     [self setBidTextField:nil];
     [self setBidButton:nil];
-    [self setPointsLabel:nil];
     [self setOpponentsView:nil];
+    [self setActivePlayerNameLabel:nil];
+    [self setActivePlayerDataLabel:nil];
     [super viewDidUnload];
 }
 
@@ -100,7 +100,7 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
     // Create the data label (ie. money and points) and add it to the opponent view.
     CGRect dataLabelFrame = CGRectMake(0, NAME_LABEL_HEIGHT, opponentsView.frame.size.width, DATA_LABEL_HEIGHT);
     UILabel *dataLabel = [[UILabel alloc] initWithFrame:dataLabelFrame];
-    [dataLabel setText:[NSString stringWithFormat:@"%d / %d", [player money], [player points]]];
+    [dataLabel setText:[NSString stringWithFormat:@"%d / %d / %d", [player money], [player points], [player previousBid]]];
     [opponentView addSubview:dataLabel];
 
     return opponentView;

@@ -12,7 +12,7 @@
 
 @implementation Player
 
-@synthesize name, currentGame, money, points, bidRequested, currentBid;
+@synthesize name, currentGame, money, points, bidRequested, currentBid, previousBid;
 
 - (id)initWithName:(NSString *)playerName game:(Game *)game {
     self = [super init];
@@ -24,6 +24,7 @@
         [self setPoints:0];
         [self setBidRequested:NO];
         [self setCurrentBid:0];
+        [self setPreviousBid:0];
     }
 
     return self;
@@ -43,6 +44,9 @@
 - (void)spendBid {
     // Actually subtract the bid from the player's money.
     [self setMoney:[self money] - [self currentBid]];
+
+    // Set the previous bid.
+    [self setPreviousBid:[self currentBid]];
 }
 
 - (void)addPoint {

@@ -18,6 +18,7 @@
 @property (nonatomic) int points;
 @property (nonatomic) BOOL bidRequested;
 @property (nonatomic) int currentBid;
+@property (nonatomic) int previousBid;
 
 - (id)initWithName:(NSString *)playerName game:(Game *)game;
 - (void)submitBid:(int)bid;

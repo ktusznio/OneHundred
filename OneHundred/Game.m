@@ -45,6 +45,7 @@
 - (void)obtainPlayerBids {
     // Ask all of the players to make their bids.
     for (Player *player in [self players]) {
+        [player setCurrentBid:0];
         [player setBidRequested:YES];
 
         // Computer players will make their bids right away.
