@@ -13,30 +13,37 @@
 
 @implementation BiddingViewController
 
-@synthesize bidButton, bidTextField, game, player, pointsLabel, remainingMoneyLabel;
+@synthesize opponentsView, bidButton, bidTextField, game, activePlayer, pointsLabel, remainingMoneyLabel;
+
+const CGFloat OPPONENT_VIEW_HEIGHT = 40;
+const CGFloat NAME_LABEL_HEIGHT = 20;
+const CGFloat DATA_LABEL_HEIGHT = 20;
 
 - (id)initWithPlayer:(Player *)aPlayer {
     self = [super init];
 
     if (self) {
-        [self setPlayer:aPlayer];
+        [self setActivePlayer:aPlayer];
         [self setGame:[aPlayer currentGame]];
     }
 
     return self;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewWillAppear:(BOOL)animated {
-    [remainingMoneyLabel setText:[NSString stringWithFormat:@"$%d", [player money]]];
-    [pointsLabel setText:[NSString stringWithFormat:@"%d out of %d", [player points], [[player currentGame] targetPoints]]];
+    // Set up the active player's view.
+    [remainingMoneyLabel setText:[NSString stringWithFormat:@"$%d", [activePlayer money]]];
+    [pointsLabel setText:[NSString stringWithFormat:@"%d out of %d", [activePlayer points], [[activePlayer currentGame] targetPoints]]];
+
+    // Set up the opponents' view.
+    int opponentCount = 0;
+    for (Player *player in [game players]) {
+        if (player != activePlayer) {
+            UIView *opponentView = [self opponentViewForPlayer:player
+                                                         index:opponentCount];
+            [[self opponentsView] addSubview:opponentView];
+        }
+    }
 }
 
 - (void)viewDidLoad {
@@ -49,6 +56,7 @@
     [self setBidTextField:nil];
     [self setBidButton:nil];
     [self setPointsLabel:nil];
+    [self setOpponentsView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -66,13 +74,34 @@
     NSString *bid = [bidTextField text];
     if ([bid length] > 0) {
         // Submit the player's bid.
-        [player submitBid:[bid intValue]];
+        [activePlayer submitBid:[bid intValue]];
 
         // Clear the bid text field.
         [bidTextField setText:@""];
     } else {
         // TODO: Alert the user that the bid is invalid.
     }
+}
+
+- (UIView *)opponentViewForPlayer:(Player *)player
+                            index:(int)index {
+    // Create the opponent view to return.
+    CGRect opponentViewFrame = CGRectMake(0, index * OPPONENT_VIEW_HEIGHT, opponentsView.frame.size.width, OPPONENT_VIEW_HEIGHT);
+    UIView *opponentView = [[UIView alloc] initWithFrame:opponentViewFrame];
+
+    // Create the name label and add it to the opponent view.
+    CGRect nameLabelFrame = CGRectMake(0, 0, opponentsView.frame.size.width, NAME_LABEL_HEIGHT);
+    UILabel *nameLabel = [[UILabel alloc] initWithFrame:nameLabelFrame];
+    [nameLabel setText:[player name]];
+    [opponentView addSubview:nameLabel];
+
+    // Create the data label (ie. money and points) and add it to the opponent view.
+    CGRect dataLabelFrame = CGRectMake(0, NAME_LABEL_HEIGHT, opponentsView.frame.size.width, DATA_LABEL_HEIGHT);
+    UILabel *dataLabel = [[UILabel alloc] initWithFrame:dataLabelFrame];
+    [dataLabel setText:[NSString stringWithFormat:@"%d / %d", [player money], [player points]]];
+    [opponentView addSubview:dataLabel];
+
+    return opponentView;
 }
 
 #pragma mark GameDelegate
