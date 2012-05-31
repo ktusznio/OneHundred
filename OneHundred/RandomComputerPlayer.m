@@ -14,8 +14,8 @@
 
 @implementation RandomComputerPlayer
 
-- (id)initWithName:(NSString *)playerName game:(Game *)game {
-    self = [super initWithName:playerName game:game];
+- (id)initWithName:(NSString *)playerName {
+    self = [super initWithName:playerName];
 
     if (self) {
 

@@ -14,12 +14,14 @@
 
 @synthesize delegate, targetPoints, startingMoney, players, playersWithBids;
 
-- (id)initWithTargetPoints:(int)points startingMoney:(int)money {
+- (id)initWithTargetPoints:(int)points
+             startingMoney:(int)money {
     self = [super init];
 
     if (self) {
         [self setTargetPoints:points];
         [self setStartingMoney:money];
+
         [self setPlayers:[NSMutableArray array]];
         [self setPlayersWithBids:[NSMutableSet set]];
     }
@@ -29,6 +31,11 @@
 
 - (void)addPlayer:(Player *)player {
     [[self players] addObject:player];
+}
+
+- (void)startGame {
+    [[self delegate] gameWillBegin];
+    [self startNewRound];
 }
 
 - (void)startNewRound {
@@ -46,7 +53,6 @@
     // Ask all of the players to make their bids.
     for (Player *player in [self players]) {
         [player setCurrentBid:0];
-        [player setBidRequested:YES];
 
         // Computer players will make their bids right away.
         if ([player isKindOfClass:[ComputerPlayer class]]) {

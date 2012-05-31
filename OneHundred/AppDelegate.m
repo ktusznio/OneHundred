@@ -27,26 +27,28 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
-    // Initialize the game and players.
+    // Create the players.
+    Player *player = [[Player alloc] initWithName:@"Max"];
+    DumbComputerPlayer *dumbComputerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox"];
+    RandomComputerPlayer *randomComputerPlayer = [[RandomComputerPlayer alloc] initWithName:@"Wepqup"];
+
+    // Initialize the game.
     Game *game = [[Game alloc] initWithTargetPoints:6 startingMoney:100];
-    Player *player = [[Player alloc] initWithName:@"Max" game:game];
-    DumbComputerPlayer *dumbComputerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox" game:game];
-    RandomComputerPlayer *randomComputerPlayer = [[RandomComputerPlayer alloc] initWithName:@"Wepqup" game:game];
     [game addPlayer:player];
     [game addPlayer:dumbComputerPlayer];
     [game addPlayer:randomComputerPlayer];
 
-    // Start the first round.
-    [game startNewRound];
-
     // Set up the navigation controller and its initial view.
     UINavigationController *navigationController = [[UINavigationController alloc] init];
-    BiddingViewController *biddingViewController = [[BiddingViewController alloc] initWithActivePlayer:player];
+    BiddingViewController *biddingViewController = [[BiddingViewController alloc] initForGame:game activePlayer:player];
     [navigationController pushViewController:biddingViewController animated:NO];
     [[self window] setRootViewController:navigationController];
 
-    // Assign the game's delegate.
+    // Set the game's delegate.
     [game setDelegate:biddingViewController];
+
+    // Start the game.
+    [game startGame];
 
     return YES;
 }

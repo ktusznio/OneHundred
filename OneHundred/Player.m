@@ -12,27 +12,29 @@
 
 @implementation Player
 
-@synthesize name, currentGame, money, points, bidRequested, currentBid, previousBid;
+@synthesize name, currentGame, money, points, currentBid, previousBid;
 
-- (id)initWithName:(NSString *)playerName game:(Game *)game {
+- (id)initWithName:(NSString *)playerName {
     self = [super init];
 
     if (self) {
         [self setName:playerName];
-        [self setCurrentGame:game];
-        [self setMoney:[game startingMoney]];
-        [self setPoints:0];
-        [self setBidRequested:NO];
-        [self setCurrentBid:0];
-        [self setPreviousBid:0];
     }
 
     return self;
 }
 
+- (void)prepareForGame:(Game *)game {
+    // Initialize the player's game-specific data.
+    [self setCurrentGame:game];
+    [self setMoney:[game startingMoney]];
+    [self setPoints:0];
+    [self setCurrentBid:0];
+    [self setPreviousBid:0];
+}
+
 - (void)submitBid:(int)bid {
     [self setCurrentBid:bid];
-    [self setBidRequested:NO];
     [self notifyGameOfBid];
 }
 

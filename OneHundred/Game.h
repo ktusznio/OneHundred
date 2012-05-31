@@ -12,6 +12,7 @@
 
 @protocol GameDelegate
 
+- (void)gameWillBegin;
 - (void)roundWillBegin;
 - (void)gameDidEnd:(Player *)winner;
 
@@ -25,8 +26,10 @@
 @property (strong, nonatomic) NSMutableArray *players;
 @property (strong, nonatomic) NSMutableSet *playersWithBids;
 
-- (id)initWithTargetPoints:(int)points startingMoney:(int)money;
+- (id)initWithTargetPoints:(int)points
+             startingMoney:(int)money;
 - (void)addPlayer:(Player *)player;
+- (void)startGame;
 - (void)startNewRound;
 - (void)clearPlayersWithBids;
 - (void)obtainPlayerBids;

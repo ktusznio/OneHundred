@@ -24,7 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *bidButton;
 @property (weak, nonatomic) IBOutlet UIView *opponentsView;
 
-- (id)initWithActivePlayer:(Player *)anActivePlayer;
+- (id)initForGame:(Game *)aGame
+     activePlayer:(Player *)anActivePlayer;
 
 - (IBAction)onBidButtonTap:(id)sender;
 - (UIView *)opponentViewForPlayer:(Player *)player

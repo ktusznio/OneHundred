@@ -20,12 +20,13 @@ const CGFloat OPPONENT_VIEW_HEIGHT = 40;
 const CGFloat NAME_LABEL_HEIGHT = 20;
 const CGFloat DATA_LABEL_HEIGHT = 20;
 
-- (id)initWithActivePlayer:(Player *)anActivePlayer {
+- (id)initForGame:(Game *)aGame
+     activePlayer:(Player *)anActivePlayer {
     self = [super init];
 
     if (self) {
+        [self setGame:aGame];
         [self setActivePlayer:anActivePlayer];
-        [self setGame:[anActivePlayer currentGame]];
     }
 
     return self;
@@ -107,6 +108,13 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
 }
 
 #pragma mark GameDelegate
+
+- (void)gameWillBegin {
+    // Have each player prepare for the game.
+    for (Player *player in [game players]) {
+        [player prepareForGame:game];
+    }
+}
 
 - (void)roundWillBegin {
     [self viewWillAppear:NO];
