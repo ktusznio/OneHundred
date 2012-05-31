@@ -31,8 +31,10 @@
     Game *game = [[Game alloc] initWithTargetPoints:6 startingMoney:100];
     Player *player = [[Player alloc] initWithName:@"Max" game:game];
     DumbComputerPlayer *dumbComputerPlayer = [[DumbComputerPlayer alloc] initWithName:@"Dumbox" game:game];
+    RandomComputerPlayer *randomComputerPlayer = [[RandomComputerPlayer alloc] initWithName:@"Wepqup" game:game];
     [game addPlayer:player];
     [game addPlayer:dumbComputerPlayer];
+    [game addPlayer:randomComputerPlayer];
 
     // Start the first round.
     [game startNewRound];

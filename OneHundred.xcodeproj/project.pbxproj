@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5042A5921577403A004897D9 /* GameOverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5042A5901577403A004897D9 /* GameOverViewController.m */; };
 		5042A5931577403A004897D9 /* GameOverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5042A5911577403A004897D9 /* GameOverViewController.xib */; };
+		5042A596157743B7004897D9 /* RandomComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5042A595157743B7004897D9 /* RandomComputerPlayer.m */; };
 		50FC375F15756327008D47AF /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC375E15756327008D47AF /* Player.m */; };
 		50FC376615756663008D47AF /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC376515756663008D47AF /* Game.m */; };
 		50FC376915756CAB008D47AF /* ComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC376815756CAB008D47AF /* ComputerPlayer.m */; };
@@ -29,6 +30,8 @@
 		5042A58F1577403A004897D9 /* GameOverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverViewController.h; sourceTree = "<group>"; };
 		5042A5901577403A004897D9 /* GameOverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverViewController.m; sourceTree = "<group>"; };
 		5042A5911577403A004897D9 /* GameOverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameOverViewController.xib; sourceTree = "<group>"; };
+		5042A594157743B7004897D9 /* RandomComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomComputerPlayer.h; sourceTree = "<group>"; };
+		5042A595157743B7004897D9 /* RandomComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomComputerPlayer.m; sourceTree = "<group>"; };
 		50FC375D15756327008D47AF /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		50FC375E15756327008D47AF /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		50FC376415756663008D47AF /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -80,6 +83,8 @@
 				50FC376815756CAB008D47AF /* ComputerPlayer.m */,
 				50FC376A15756D7C008D47AF /* DumbComputerPlayer.h */,
 				50FC376B15756D7C008D47AF /* DumbComputerPlayer.m */,
+				5042A594157743B7004897D9 /* RandomComputerPlayer.h */,
+				5042A595157743B7004897D9 /* RandomComputerPlayer.m */,
 			);
 			name = "Game Classes";
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 				50FC376915756CAB008D47AF /* ComputerPlayer.m in Sources */,
 				50FC376C15756D7D008D47AF /* DumbComputerPlayer.m in Sources */,
 				5042A5921577403A004897D9 /* GameOverViewController.m in Sources */,
+				5042A596157743B7004897D9 /* RandomComputerPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
