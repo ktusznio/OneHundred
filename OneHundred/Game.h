@@ -10,8 +10,15 @@
 
 @class Player;
 
+@protocol GameDelegate
+
+- (void)roundWillBegin;
+
+@end
+
 @interface Game : NSObject
 
+@property (strong, nonatomic) id<GameDelegate> delegate;
 @property (nonatomic) int targetPoints;
 @property (nonatomic) int startingMoney;
 @property (strong, nonatomic) NSMutableArray *players;

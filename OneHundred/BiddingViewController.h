@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Game.h"
+
 @class Game;
 @class Player;
 
-@interface BiddingViewController : UIViewController <UITextFieldDelegate>
+@interface BiddingViewController : UIViewController <GameDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) Game *game;
 @property (strong, nonatomic) Player *player;

@@ -42,6 +42,9 @@
     [navigationController pushViewController:biddingViewController animated:NO];
     [[self window] setRootViewController:navigationController];
 
+    // Assign the game's delegate.
+    [game setDelegate:biddingViewController];
+
     return YES;
 }
 

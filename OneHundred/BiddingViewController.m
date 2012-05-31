@@ -62,21 +62,28 @@
     // Dismiss the keyboard.
     [bidTextField resignFirstResponder];
 
-    // Submit the player's bid.
+    // If the player entered a valid bid, submit it.  Otherwise, let the player know.
     NSString *bid = [bidTextField text];
     if ([bid length] > 0) {
         // Submit the player's bid.
         [player submitBid:[bid intValue]];
 
-        // Update the view.
+        // Clear the bid text field.
         [bidTextField setText:@""];
-        [self viewWillAppear:NO];
+    } else {
+        // TODO: Alert the user that the bid is invalid.
     }
+}
+
+#pragma mark GameDelegate
+
+- (void)roundWillBegin {
+    [self viewWillAppear:NO];
 }
 
 #pragma mark UITextFieldDelegate
 
--(BOOL)textFieldShouldReturn:(UITextField*)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }

@@ -11,7 +11,7 @@
 
 @implementation Game
 
-@synthesize targetPoints, startingMoney, players, playersWithBids;
+@synthesize delegate, targetPoints, startingMoney, players, playersWithBids;
 
 - (id)initWithTargetPoints:(int)points startingMoney:(int)money {
     self = [super init];
@@ -31,6 +31,7 @@
 }
 
 - (void)startNewRound {
+    [[self delegate] roundWillBegin];
     [self clearPlayersWithBids];
     [self obtainPlayerBids];
 }
