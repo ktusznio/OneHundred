@@ -26,6 +26,7 @@
 		8E2221F0157562B700DCC508 /* BiddingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2221EE157562B700DCC508 /* BiddingViewController.xib */; };
 		8EC4A84D157808460005E8F7 /* OpponentSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */; };
 		8EC4A84E157808460005E8F7 /* OpponentSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */; };
+		8EC4A86C1579E3250005E8F7 /* AggressiveComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A86B1579E3250005E8F7 /* AggressiveComputerPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		8EC4A84A157808460005E8F7 /* OpponentSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpponentSelectionViewController.h; sourceTree = "<group>"; };
 		8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpponentSelectionViewController.m; sourceTree = "<group>"; };
 		8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpponentSelectionViewController.xib; sourceTree = "<group>"; };
+		8EC4A86A1579E3250005E8F7 /* AggressiveComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AggressiveComputerPlayer.h; sourceTree = "<group>"; };
+		8EC4A86B1579E3250005E8F7 /* AggressiveComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AggressiveComputerPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +89,7 @@
 				50FC375E15756327008D47AF /* Player.m */,
 				50FC376715756CAB008D47AF /* ComputerPlayer.h */,
 				50FC376815756CAB008D47AF /* ComputerPlayer.m */,
-				50FC376A15756D7C008D47AF /* DumbComputerPlayer.h */,
-				50FC376B15756D7C008D47AF /* DumbComputerPlayer.m */,
-				5042A594157743B7004897D9 /* RandomComputerPlayer.h */,
-				5042A595157743B7004897D9 /* RandomComputerPlayer.m */,
+				8EC4A8681579E30D0005E8F7 /* Computer Players */,
 			);
 			name = "Game Classes";
 			sourceTree = "<group>";
@@ -160,6 +160,19 @@
 				5042A5911577403A004897D9 /* GameOverViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8EC4A8681579E30D0005E8F7 /* Computer Players */ = {
+			isa = PBXGroup;
+			children = (
+				8EC4A86A1579E3250005E8F7 /* AggressiveComputerPlayer.h */,
+				8EC4A86B1579E3250005E8F7 /* AggressiveComputerPlayer.m */,
+				50FC376A15756D7C008D47AF /* DumbComputerPlayer.h */,
+				50FC376B15756D7C008D47AF /* DumbComputerPlayer.m */,
+				5042A594157743B7004897D9 /* RandomComputerPlayer.h */,
+				5042A595157743B7004897D9 /* RandomComputerPlayer.m */,
+			);
+			name = "Computer Players";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +250,7 @@
 				5042A5921577403A004897D9 /* GameOverViewController.m in Sources */,
 				5042A596157743B7004897D9 /* RandomComputerPlayer.m in Sources */,
 				8EC4A84D157808460005E8F7 /* OpponentSelectionViewController.m in Sources */,
+				8EC4A86C1579E3250005E8F7 /* AggressiveComputerPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

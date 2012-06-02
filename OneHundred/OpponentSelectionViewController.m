@@ -8,6 +8,7 @@
 
 #import "OpponentSelectionViewController.h"
 
+#import "AggressiveComputerPlayer.h"
 #import "AppDelegate.h"
 #import "BiddingViewController.h"
 #import "DumbComputerPlayer.h"
@@ -27,8 +28,8 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
 
     if (self) {
         // Set up the available opponents dictionary.
-        NSArray *opponentClasses = [NSArray arrayWithObjects:[DumbComputerPlayer class], [RandomComputerPlayer class], nil];
-        [self setOpponentNames:[NSArray arrayWithObjects:@"Dumbox", @"WEPQUP", nil]];
+        NSArray *opponentClasses = [NSArray arrayWithObjects:[DumbComputerPlayer class], [RandomComputerPlayer class], [AggressiveComputerPlayer class], nil];
+        [self setOpponentNames:[NSArray arrayWithObjects:@"Dumbox", @"WEPQUP", @"la la LA LA", nil]];
         [self setAvailableOpponents:[NSDictionary dictionaryWithObjects:opponentClasses
                                                                 forKeys:[self opponentNames]]];
 
