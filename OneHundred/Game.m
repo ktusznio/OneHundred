@@ -65,7 +65,8 @@
 
 - (void)acceptBidForPlayer:(Player *)player {
     // Check that the bid is valid.
-    if ([player currentBid] >= 0 && [player currentBid] <= [player money]) {
+    int bid = [player currentBid];
+    if (bid >= 0 && bid <= [player money]) {
         // Add the player to the set of players who have bid.
         [playersWithBids addObject:player];
 
@@ -74,8 +75,8 @@
             [self computeResults];
         }
     } else {
-        // Invalid bid.
-        // TODO: Show error message.
+        // Notify the delegate of an invalid bid.
+        [[self delegate] invalidBidMade:bid];
     }
 }
 

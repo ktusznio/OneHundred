@@ -14,6 +14,7 @@
 
 - (void)gameWillBegin;
 - (void)roundWillBegin;
+- (void)invalidBidMade:(int)invalidBid;
 - (void)gameDidEnd:(Player *)winner;
 
 @end

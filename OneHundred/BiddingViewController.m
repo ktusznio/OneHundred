@@ -124,6 +124,17 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
     [self viewWillAppear:NO];
 }
 
+- (void)invalidBidMade:(int)invalidBid {
+    // Show a dialog to inform the player of the invalid bid.
+    NSString *message = [NSString stringWithFormat:@"You can't bid %d.", invalidBid];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Invalid bid!"
+                                                        message:message
+                                                       delegate:self
+                                              cancelButtonTitle:@"Okay"
+                                              otherButtonTitles:nil];
+    [alertView show];
+}
+
 - (void)gameDidEnd:(Player *)winner {
     GameOverViewController *gameOverViewController = [[GameOverViewController alloc] initForWinner:winner];
     [[self navigationController] pushViewController:gameOverViewController
