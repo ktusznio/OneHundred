@@ -27,7 +27,8 @@
 @property (strong, nonatomic) NSMutableSet *playersWithBids;
 
 - (id)initWithTargetPoints:(int)points
-             startingMoney:(int)money;
+             startingMoney:(int)money
+                  delegate:(id<GameDelegate>)delegate;
 - (void)addPlayer:(Player *)player;
 - (void)startGame;
 - (void)startNewRound;

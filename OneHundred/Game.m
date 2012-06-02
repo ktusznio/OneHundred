@@ -15,12 +15,14 @@
 @synthesize delegate, targetPoints, startingMoney, players, playersWithBids;
 
 - (id)initWithTargetPoints:(int)points
-             startingMoney:(int)money {
+             startingMoney:(int)money
+                  delegate:(id<GameDelegate>)aDelegate {
     self = [super init];
 
     if (self) {
         [self setTargetPoints:points];
         [self setStartingMoney:money];
+        [self setDelegate:aDelegate];
 
         [self setPlayers:[NSMutableArray array]];
         [self setPlayersWithBids:[NSMutableSet set]];

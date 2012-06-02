@@ -149,15 +149,15 @@
 		8E2221EA1575625B00DCC508 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8EC4A84A157808460005E8F7 /* OpponentSelectionViewController.h */,
+				8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */,
+				8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */,
 				8E2221EC157562B700DCC508 /* BiddingViewController.h */,
 				8E2221ED157562B700DCC508 /* BiddingViewController.m */,
 				8E2221EE157562B700DCC508 /* BiddingViewController.xib */,
 				5042A58F1577403A004897D9 /* GameOverViewController.h */,
 				5042A5901577403A004897D9 /* GameOverViewController.m */,
 				5042A5911577403A004897D9 /* GameOverViewController.xib */,
-				8EC4A84A157808460005E8F7 /* OpponentSelectionViewController.h */,
-				8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */,
-				8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

@@ -99,8 +99,11 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
     // Get the app delegate.
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
 
+    // Create the bidding view controller.
+    BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
+
     // Create a new game and set the current game in the app delegate.
-    Game *currentGame = [[Game alloc] initWithTargetPoints:6 startingMoney:100];
+    Game *currentGame = [[Game alloc] initWithTargetPoints:6 startingMoney:100 delegate:biddingViewController];
     [appDelegate setCurrentGame:currentGame];
 
     // Add the active player to the game.
@@ -116,9 +119,7 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
         }
     }
 
-    // Set the game's delegate to a bidding view controller and start the game.
-    BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
-    [currentGame setDelegate:biddingViewController];
+    // Start the game.
     [currentGame startGame];
 
     // Push to the bidding screen.
