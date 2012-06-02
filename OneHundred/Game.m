@@ -41,22 +41,24 @@
 }
 
 - (void)startNewRound {
+    [self clearPlayerBids];
+    [self obtainComputerPlayerBids];
     [[self delegate] roundWillBegin];
-    [self clearPlayersWithBids];
-    [self obtainPlayerBids];
 }
 
-- (void)clearPlayersWithBids {
+- (void)clearPlayerBids {
+    // Reset player bids.
+    for (Player *player in [self players]) {
+        [player setCurrentBid:0];
+    }
+
     // Empty the set of players who have bid.
     [[self playersWithBids] removeAllObjects];
 }
 
-- (void)obtainPlayerBids {
-    // Ask all of the players to make their bids.
+- (void)obtainComputerPlayerBids {
+    // Ask computer players to make their bids.
     for (Player *player in [self players]) {
-        [player setCurrentBid:0];
-
-        // Computer players will make their bids right away.
         if ([player isKindOfClass:[ComputerPlayer class]]) {
             [(ComputerPlayer *)player computeAndSubmitBid];
         }

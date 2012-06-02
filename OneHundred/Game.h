@@ -33,8 +33,8 @@
 - (void)addPlayer:(Player *)player;
 - (void)startGame;
 - (void)startNewRound;
-- (void)clearPlayersWithBids;
-- (void)obtainPlayerBids;
+- (void)clearPlayerBids;
+- (void)obtainComputerPlayerBids;
 - (void)acceptBidForPlayer:(Player *)player;
 - (void)computeResults;
 - (void)declareWinner:(Player *)winner;
