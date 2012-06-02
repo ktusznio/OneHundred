@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSMutableArray *activatedOpponents;
 @property (strong, nonatomic) NSDictionary *availableOpponents;
 
+@property (weak, nonatomic) IBOutlet UILabel *activePlayerNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addFirstOpponentButton;
 @property (weak, nonatomic) IBOutlet UIButton *addSecondOpponentButton;
 @property (weak, nonatomic) IBOutlet UIButton *addThirdOpponentButton;

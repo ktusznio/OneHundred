@@ -12,6 +12,7 @@
 #import "BiddingViewController.h"
 #import "DumbComputerPlayer.h"
 #import "Game.h"
+#import "Player.h"
 #import "RandomComputerPlayer.h"
 
 static NSString *initialOpponentButtonText = @"Tap to add opponent";
@@ -19,7 +20,7 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
 @implementation OpponentSelectionViewController
 
 @synthesize activatedOpponents, availableOpponents;
-@synthesize addFirstOpponentButton, addSecondOpponentButton, addThirdOpponentButton;
+@synthesize activePlayerNameLabel, addFirstOpponentButton, addSecondOpponentButton, addThirdOpponentButton;
 
 - (id)init {
     self = [super init];
@@ -43,6 +44,11 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    // Set the active player name label.
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [activePlayerNameLabel setText:[[appDelegate activePlayer] name]];
+
     // Initialize the add opponent button texts. The first opponent is enabled by default.
     NSArray *opponentNames = [[self availableOpponents] allKeys];
     [addFirstOpponentButton setTitle:[opponentNames objectAtIndex:0] forState:UIControlStateNormal];
@@ -51,11 +57,11 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
-
+    [self setActivePlayerNameLabel:nil];
     [self setAddFirstOpponentButton:nil];
     [self setAddSecondOpponentButton:nil];
     [self setAddThirdOpponentButton:nil];
+    [super viewDidUnload];
 }
 
 - (IBAction)onOpponentButtonTap:(id)sender {
