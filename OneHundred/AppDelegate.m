@@ -19,7 +19,6 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
-@synthesize navigationController;
 @synthesize currentGame, activePlayer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -31,10 +30,12 @@
     // Create the user's player.
     [self setActivePlayer:[[Player alloc] initWithName:@"Max"]];
 
-    // Set up the navigation controller and its initial view.
-    [self setNavigationController:[[UINavigationController alloc] init]];
-    [navigationController pushViewController:[[OpponentSelectionViewController alloc] init] animated:NO];
+    // Set a navigation view controller as the root view controller.
+    UINavigationController *navigationController = [[UINavigationController alloc] init];
     [[self window] setRootViewController:navigationController];
+
+    // Show the opponent selection screen.
+    [navigationController pushViewController:[[OpponentSelectionViewController alloc] init] animated:NO];
 
     return YES;
 }

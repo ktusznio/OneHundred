@@ -116,8 +116,7 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
     [currentGame startGame];
 
     // Push to the bidding screen.
-    UINavigationController *navigationController = [(AppDelegate *)[[UIApplication sharedApplication] delegate] navigationController];
-    [navigationController pushViewController:biddingViewController animated:YES];
+    [[self navigationController] pushViewController:biddingViewController animated:YES];
 }
 
 @end
