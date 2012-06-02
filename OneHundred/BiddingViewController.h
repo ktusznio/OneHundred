@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIView *opponentsView;
 
 - (IBAction)onBidButtonTap:(id)sender;
+- (IBAction)onBackgroundTap:(id)sender;
 - (UIView *)opponentViewForPlayer:(Player *)player
                             index:(int)index;
 

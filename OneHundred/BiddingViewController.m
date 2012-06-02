@@ -82,6 +82,11 @@ const CGFloat DATA_LABEL_HEIGHT = 20;
     }
 }
 
+- (IBAction)onBackgroundTap:(id)sender {
+    // Dismiss the keyboard.
+    [bidTextField resignFirstResponder];
+}
+
 - (UIView *)opponentViewForPlayer:(Player *)player
                             index:(int)index {
     // Create the opponent view to return.
