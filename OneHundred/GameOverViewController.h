@@ -15,7 +15,9 @@
 @property (strong, nonatomic) Player *winner;
 
 @property (weak, nonatomic) IBOutlet UILabel *winnerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *playAgainButton;
 
 - (id)initForWinner:(Player *)aWinner;
+- (IBAction)onPlayAgainButtonTap:(id)sender;
 
 @end

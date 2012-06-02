@@ -12,7 +12,8 @@
 
 @implementation GameOverViewController
 
-@synthesize winner, winnerLabel;
+@synthesize winner;
+@synthesize winnerLabel, playAgainButton;
 
 - (id)initForWinner:(Player *)aWinner {
     self = [super init];
@@ -36,11 +37,17 @@
 
 - (void)viewDidUnload {
     [self setWinnerLabel:nil];
+    [self setPlayAgainButton:nil];
     [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+}
+
+- (IBAction)onPlayAgainButtonTap:(id)sender {
+    // Pop to the root controller (the opponent selection screen).
+    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 @end
