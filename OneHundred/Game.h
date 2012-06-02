@@ -26,6 +26,7 @@
 @property (nonatomic) int startingMoney;
 @property (strong, nonatomic) NSMutableArray *players;
 @property (strong, nonatomic) NSMutableSet *playersWithBids;
+@property (strong, nonatomic) NSMutableDictionary *playerBiddingHistory;
 
 - (id)initWithTargetPoints:(int)points
              startingMoney:(int)money
@@ -36,6 +37,7 @@
 - (void)clearPlayerBids;
 - (void)obtainComputerPlayerBids;
 - (void)acceptBidForPlayer:(Player *)player;
+- (void)recordRoundBidding;
 - (void)computeResults;
 - (void)declareWinner:(Player *)winner;
 

@@ -13,7 +13,7 @@
 
 @implementation Game
 
-@synthesize delegate, targetPoints, startingMoney, players, playersWithBids;
+@synthesize delegate, targetPoints, startingMoney, players, playersWithBids, playerBiddingHistory;
 
 - (id)initWithTargetPoints:(int)points
              startingMoney:(int)money
@@ -27,6 +27,7 @@
 
         [self setPlayers:[NSMutableArray array]];
         [self setPlayersWithBids:[NSMutableSet set]];
+        [self setPlayerBiddingHistory:[NSMutableDictionary dictionary]];
     }
 
     return self;
@@ -34,6 +35,8 @@
 
 - (void)addPlayer:(Player *)player {
     [[self players] addObject:player];
+    [[self playerBiddingHistory] setObject:[NSMutableArray array]
+                                    forKey:[player name]];
 }
 
 - (void)startGame {
@@ -73,8 +76,9 @@
         // Add the player to the set of players who have bid.
         [playersWithBids addObject:player];
 
-        // If all players have bid, compute results.
+        // If all players have bid, record their bids and compute results.
         if ([playersWithBids count] == [players count]) {
+            [self recordRoundBidding];
             [self computeResults];
         }
     } else {
@@ -83,6 +87,13 @@
         if (player == activePlayer) {
             [[self delegate] invalidBidMade:bid];
         }
+    }
+}
+
+- (void)recordRoundBidding {
+    for (Player *player in [self players]) {
+        NSMutableArray *playerBids = [[self playerBiddingHistory] objectForKey:[player name]];
+        [playerBids addObject:[NSNumber numberWithInt:[player currentBid]]];
     }
 }
 
