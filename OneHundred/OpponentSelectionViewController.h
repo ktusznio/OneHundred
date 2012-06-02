@@ -12,8 +12,9 @@
 
 @interface OpponentSelectionViewController : UIViewController
 
-@property (strong, nonatomic) NSMutableArray *activatedOpponents;
+@property (strong, nonatomic) NSArray *opponentNames;
 @property (strong, nonatomic) NSDictionary *availableOpponents;
+@property (strong, nonatomic) NSMutableArray *activatedOpponents;
 
 @property (weak, nonatomic) IBOutlet UILabel *activePlayerNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addFirstOpponentButton;
