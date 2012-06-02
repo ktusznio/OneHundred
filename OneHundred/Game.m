@@ -8,6 +8,7 @@
 
 #import "Game.h"
 
+#import "AppDelegate.h"
 #import "ComputerPlayer.h"
 
 @implementation Game
@@ -77,8 +78,11 @@
             [self computeResults];
         }
     } else {
-        // Notify the delegate of an invalid bid.
-        [[self delegate] invalidBidMade:bid];
+        // If the active player has made an invalid bid, notify the delegate.
+        Player *activePlayer = [(AppDelegate *)[[UIApplication sharedApplication] delegate] activePlayer];
+        if (player == activePlayer) {
+            [[self delegate] invalidBidMade:bid];
+        }
     }
 }
 
