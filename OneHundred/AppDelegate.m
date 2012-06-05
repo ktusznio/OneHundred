@@ -10,6 +10,7 @@
 
 #import "OpponentSelectionViewController.h"
 #import "Game.h"
+#import "GCHelper.h"
 #import "Player.h"
 
 @implementation AppDelegate
@@ -22,10 +23,13 @@
 @synthesize currentGame, activePlayer;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [[self window] setBackgroundColor:[UIColor whiteColor]];
+    [[self window] makeKeyAndVisible];
+
+    // Authenticate the user with Game Center.
+    [[GCHelper sharedInstance] authenticateLocalUser];
 
     // Create the user's player.
     [self setActivePlayer:[[Player alloc] initWithName:@"Max"]];

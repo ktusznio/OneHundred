@@ -27,6 +27,8 @@
 		8EC4A84D157808460005E8F7 /* OpponentSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */; };
 		8EC4A84E157808460005E8F7 /* OpponentSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */; };
 		8EC4A86C1579E3250005E8F7 /* AggressiveComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A86B1579E3250005E8F7 /* AggressiveComputerPlayer.m */; };
+		8EC4A86F157EB1610005E8F7 /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A86E157EB1610005E8F7 /* GCHelper.m */; };
+		8EC4A871157EB4570005E8F7 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EC4A870157EB4570005E8F7 /* GameKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,9 @@
 		8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpponentSelectionViewController.xib; sourceTree = "<group>"; };
 		8EC4A86A1579E3250005E8F7 /* AggressiveComputerPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AggressiveComputerPlayer.h; sourceTree = "<group>"; };
 		8EC4A86B1579E3250005E8F7 /* AggressiveComputerPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AggressiveComputerPlayer.m; sourceTree = "<group>"; };
+		8EC4A86D157EB1600005E8F7 /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
+		8EC4A86E157EB1610005E8F7 /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
+		8EC4A870157EB4570005E8F7 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EC4A871157EB4570005E8F7 /* GameKit.framework in Frameworks */,
 				8E2221CB15755F1D00DCC508 /* UIKit.framework in Frameworks */,
 				8E2221CD15755F1D00DCC508 /* Foundation.framework in Frameworks */,
 				8E2221CF15755F1D00DCC508 /* CoreGraphics.framework in Frameworks */,
@@ -97,6 +103,7 @@
 		8E2221BB15755F1C00DCC508 = {
 			isa = PBXGroup;
 			children = (
+				8EC4A870157EB4570005E8F7 /* GameKit.framework */,
 				8E2221D215755F1D00DCC508 /* OneHundred */,
 				8E2221C915755F1D00DCC508 /* Frameworks */,
 				8E2221C715755F1D00DCC508 /* Products */,
@@ -127,6 +134,8 @@
 			children = (
 				8E2221DB15755F1D00DCC508 /* AppDelegate.h */,
 				8E2221DC15755F1D00DCC508 /* AppDelegate.m */,
+				8EC4A86D157EB1600005E8F7 /* GCHelper.h */,
+				8EC4A86E157EB1610005E8F7 /* GCHelper.m */,
 				50FC376D15757B1D008D47AF /* Game Classes */,
 				8E2221EA1575625B00DCC508 /* View Controllers */,
 				8E2221D315755F1D00DCC508 /* Supporting Files */,
@@ -251,6 +260,7 @@
 				5042A596157743B7004897D9 /* RandomComputerPlayer.m in Sources */,
 				8EC4A84D157808460005E8F7 /* OpponentSelectionViewController.m in Sources */,
 				8EC4A86C1579E3250005E8F7 /* AggressiveComputerPlayer.m in Sources */,
+				8EC4A86F157EB1610005E8F7 /* GCHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
