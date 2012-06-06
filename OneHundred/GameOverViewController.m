@@ -46,7 +46,7 @@
 }
 
 - (IBAction)onPlayAgainButtonTap:(id)sender {
-    // Pop to the root controller (the opponent selection screen).
+    // Pop to the root controller (the main menu screen).
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 

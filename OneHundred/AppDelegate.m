@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 
-#import "OpponentSelectionViewController.h"
 #import "Game.h"
 #import "GCHelper.h"
+#import "MainMenuViewController.h"
 #import "Player.h"
 
 @implementation AppDelegate
@@ -38,8 +38,8 @@
     UINavigationController *navigationController = [[UINavigationController alloc] init];
     [[self window] setRootViewController:navigationController];
 
-    // Show the opponent selection screen.
-    [navigationController pushViewController:[[OpponentSelectionViewController alloc] init] animated:NO];
+    // Show the main menu.
+    [navigationController pushViewController:[[MainMenuViewController alloc] init] animated:NO];
 
     return YES;
 }

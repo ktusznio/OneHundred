@@ -57,6 +57,11 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
     [addThirdOpponentButton setTitle:initialOpponentButtonText forState:UIControlStateNormal];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    // Show the navigation bar.
+    [[self navigationController] setNavigationBarHidden:NO animated:animated];
+}
+
 - (void)viewDidUnload {
     [self setActivePlayerNameLabel:nil];
     [self setAddFirstOpponentButton:nil];
