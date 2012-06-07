@@ -24,6 +24,7 @@
 }
 
 @property (assign, readonly) BOOL gameCenterAvailable;
+@property (strong, nonatomic) NSMutableDictionary *players;
 @property (strong, nonatomic) UIViewController *presentingViewController;
 @property (strong, nonatomic) GKMatch *match;
 @property (strong, nonatomic) id <GCHelperDelegate> delegate;
