@@ -8,6 +8,7 @@
 
 #import "MainMenuViewController.h"
 
+#import "MultiplayerMatchSetupViewController.h"
 #import "OpponentSelectionViewController.h"
 
 @implementation MainMenuViewController
@@ -49,7 +50,8 @@
 }
 
 - (IBAction)onMultiplayerButtonTap:(id)sender {
-
+    // Push the multiplayer match setup view.
+    [[self navigationController] pushViewController:[[MultiplayerMatchSetupViewController alloc] init] animated:YES];
 }
 
 @end

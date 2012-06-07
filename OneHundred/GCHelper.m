@@ -75,7 +75,7 @@ static GCHelper *sharedHelper = nil;
         } else {
             // Populate the players dictionary.
             [self setPlayers:[NSMutableDictionary dictionaryWithCapacity:[thePlayers count]]];
-            for (GKPlayer *player in players) {
+            for (GKPlayer *player in thePlayers) {
                 NSLog(@"Found player: %@", [player alias]);
                 [players setObject:player forKey:[player playerID]];
             }
