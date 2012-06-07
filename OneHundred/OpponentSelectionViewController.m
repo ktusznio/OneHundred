@@ -52,14 +52,18 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
     [activePlayerNameLabel setText:[[appDelegate activePlayer] name]];
 
     // Initialize the add opponent button texts. The first opponent is enabled by default.
-    [addFirstOpponentButton setTitle:[[self opponentNames] objectAtIndex:0] forState:UIControlStateNormal];
-    [addSecondOpponentButton setTitle:initialOpponentButtonText forState:UIControlStateNormal];
-    [addThirdOpponentButton setTitle:initialOpponentButtonText forState:UIControlStateNormal];
+    [addFirstOpponentButton setTitle:[[self opponentNames] objectAtIndex:0]
+                            forState:UIControlStateNormal];
+    [addSecondOpponentButton setTitle:initialOpponentButtonText
+                             forState:UIControlStateNormal];
+    [addThirdOpponentButton setTitle:initialOpponentButtonText
+                            forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     // Show the navigation bar.
-    [[self navigationController] setNavigationBarHidden:NO animated:animated];
+    [[self navigationController] setNavigationBarHidden:NO
+                                               animated:animated];
 }
 
 - (void)viewDidUnload {
@@ -78,15 +82,18 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
     // Otherwise, iterate to the next opponent.
     int selectedOpponentIndex = [[self opponentNames] indexOfObject:buttonText];
     if (selectedOpponentIndex == NSNotFound) {
-        [tappedButton setTitle:[[self opponentNames] objectAtIndex:0] forState:UIControlStateNormal];
+        [tappedButton setTitle:[[self opponentNames] objectAtIndex:0]
+                      forState:UIControlStateNormal];
     } else {
         NSString *nextOpponentName = [[self opponentNames] objectAtIndex:(selectedOpponentIndex + 1) % [[self opponentNames] count]];
-        [tappedButton setTitle:nextOpponentName forState:UIControlStateNormal];
+        [tappedButton setTitle:nextOpponentName
+                      forState:UIControlStateNormal];
     }
 }
 
 - (IBAction)onBackButtonTap:(id)sender {
-
+    // Go back to the main menu screen.
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (IBAction)onStartButtonTap:(id)sender {
@@ -97,7 +104,9 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
     BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
 
     // Create a new game and set the current game in the app delegate.
-    Game *currentGame = [[Game alloc] initWithTargetPoints:6 startingMoney:100 delegate:biddingViewController];
+    Game *currentGame = [[Game alloc] initWithTargetPoints:6
+                                             startingMoney:100
+                                                  delegate:biddingViewController];
     [appDelegate setCurrentGame:currentGame];
 
     // Add the active player to the game.
@@ -117,7 +126,8 @@ static NSString *initialOpponentButtonText = @"Tap to add opponent";
     [currentGame startGame];
 
     // Push to the bidding screen.
-    [[self navigationController] pushViewController:biddingViewController animated:YES];
+    [[self navigationController] pushViewController:biddingViewController
+                                           animated:YES];
 }
 
 @end
