@@ -28,6 +28,7 @@
 		8E2221F0157562B700DCC508 /* BiddingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2221EE157562B700DCC508 /* BiddingViewController.xib */; };
 		8E2BC1B315810DA40071C9CE /* MultiplayerMatchSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2BC1B115810DA40071C9CE /* MultiplayerMatchSetupViewController.m */; };
 		8E2BC1B415810DA40071C9CE /* MultiplayerMatchSetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E2BC1B215810DA40071C9CE /* MultiplayerMatchSetupViewController.xib */; };
+		8EBF44FD158151C8007D747F /* MultiplayerGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EBF44FC158151C8007D747F /* MultiplayerGame.m */; };
 		8EC4A84D157808460005E8F7 /* OpponentSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */; };
 		8EC4A84E157808460005E8F7 /* OpponentSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */; };
 		8EC4A86C1579E3250005E8F7 /* AggressiveComputerPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC4A86B1579E3250005E8F7 /* AggressiveComputerPlayer.m */; };
@@ -70,6 +71,9 @@
 		8E2BC1B015810DA40071C9CE /* MultiplayerMatchSetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerMatchSetupViewController.h; sourceTree = "<group>"; };
 		8E2BC1B115810DA40071C9CE /* MultiplayerMatchSetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerMatchSetupViewController.m; sourceTree = "<group>"; };
 		8E2BC1B215810DA40071C9CE /* MultiplayerMatchSetupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplayerMatchSetupViewController.xib; sourceTree = "<group>"; };
+		8EBF44F715814A3B007D747F /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		8EBF44FB158151C8007D747F /* MultiplayerGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerGame.h; sourceTree = "<group>"; };
+		8EBF44FC158151C8007D747F /* MultiplayerGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerGame.m; sourceTree = "<group>"; };
 		8EC4A84A157808460005E8F7 /* OpponentSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpponentSelectionViewController.h; sourceTree = "<group>"; };
 		8EC4A84B157808460005E8F7 /* OpponentSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpponentSelectionViewController.m; sourceTree = "<group>"; };
 		8EC4A84C157808460005E8F7 /* OpponentSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpponentSelectionViewController.xib; sourceTree = "<group>"; };
@@ -101,6 +105,9 @@
 			children = (
 				50FC376415756663008D47AF /* Game.h */,
 				50FC376515756663008D47AF /* Game.m */,
+				8EBF44FB158151C8007D747F /* MultiplayerGame.h */,
+				8EBF44FC158151C8007D747F /* MultiplayerGame.m */,
+				8EBF44F715814A3B007D747F /* Message.h */,
 				50FC375D15756327008D47AF /* Player.h */,
 				50FC375E15756327008D47AF /* Player.m */,
 				50FC376715756CAB008D47AF /* ComputerPlayer.h */,
@@ -281,6 +288,7 @@
 				8EC4A86F157EB1610005E8F7 /* GCHelper.m in Sources */,
 				505EE4E2157EE7A00061C46B /* MainMenuViewController.m in Sources */,
 				8E2BC1B315810DA40071C9CE /* MultiplayerMatchSetupViewController.m in Sources */,
+				8EBF44FD158151C8007D747F /* MultiplayerGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

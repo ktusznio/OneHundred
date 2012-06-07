@@ -6,9 +6,7 @@
 //  Copyright (c) 2012 Lost City Studios Inc. All rights reserved.
 //
 
-#import "GCHelper.h"
-
-@interface MultiplayerMatchSetupViewController : UIViewController <GCHelperDelegate>
+@interface MultiplayerMatchSetupViewController : UIViewController
 
 - (IBAction)onJoinGameButtonTap:(id)sender;
 

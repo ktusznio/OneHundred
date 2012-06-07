@@ -8,6 +8,8 @@
 
 #import "GCHelper.h"
 
+#import "Message.h"
+
 @implementation GCHelper
 
 @synthesize delegate, gameCenterAvailable, players, presentingViewController, match;

@@ -8,6 +8,9 @@
 
 #import "MultiplayerMatchSetupViewController.h"
 
+#import "AppDelegate.h"
+#import "BiddingViewController.h"
+#import "MultiplayerGame.h"
 #import "GCHelper.h"
 
 @implementation MultiplayerMatchSetupViewController
@@ -17,21 +20,14 @@
 }
 
 - (IBAction)onJoinGameButtonTap:(id)sender {
-    [[GCHelper sharedInstance] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self delegate:self];
-}
+    // Create the bidding view controller.
+    BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
 
-#pragma mark GCHelperDelegate
+    // Create a multiplayer game.
+    MultiplayerGame *game = [[MultiplayerGame alloc] initWithTargetPoints:6 startingMoney:100 delegate:biddingViewController];
 
-- (void)matchStarted {
-    NSLog(@"Match started!");
-}
-
-- (void)matchEnded {
-    NSLog(@"Match ended!");
-}
-
-- (void)match:(GKMatch *)match didReceiveData:(NSData *)data fromPlayer:(NSString *)playerID {
-    NSLog(@"Match received data!");
+    // Find a match.
+    [[GCHelper sharedInstance] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self delegate:game];
 }
 
 @end
