@@ -16,8 +16,12 @@
 
 @synthesize isServer, resolvedServerDesignation, serverDesignation, state;
 
-- (id)initWithTargetPoints:(int)points startingMoney:(int)money delegate:(id<GameDelegate>)delegate {
-    self = [super initWithTargetPoints:points startingMoney:money delegate:delegate];
+- (id)initWithTargetPoints:(int)points
+             startingMoney:(int)money
+                  delegate:(id<GameDelegate>)delegate {
+    self = [super initWithTargetPoints:points
+                         startingMoney:money
+                              delegate:delegate];
 
     if (self) {
         [self setServerDesignation:arc4random()];
@@ -30,7 +34,9 @@
 
 - (void)sendData:(NSData *)data {
     NSError *error;
-    BOOL success = [[[GCHelper sharedInstance] match] sendDataToAllPlayers:data withDataMode:GKMatchSendDataReliable error:&error];
+    BOOL success = [[[GCHelper sharedInstance] match] sendDataToAllPlayers:data
+                                                              withDataMode:GKMatchSendDataReliable
+                                                                     error:&error];
     if (!success) {
         NSLog(@"Error sending init packet");
         [self matchEnded];
@@ -91,7 +97,7 @@
         NSLog(@"Received random number: %ud, ours %ud", serverDesignationMessage->randomDesignation, [self serverDesignation]);
         bool tie = NO;
 
-        if (serverDesignationMessage->randomDesignation == [self serverDesignation]) {
+        if ([self serverDesignation] == serverDesignationMessage->randomDesignation) {
             NSLog(@"TIE!");
             tie = true;
 

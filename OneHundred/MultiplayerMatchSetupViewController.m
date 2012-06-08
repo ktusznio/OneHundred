@@ -24,10 +24,15 @@
     BiddingViewController *biddingViewController = [[BiddingViewController alloc] init];
 
     // Create a multiplayer game.
-    MultiplayerGame *game = [[MultiplayerGame alloc] initWithTargetPoints:6 startingMoney:100 delegate:biddingViewController];
+    MultiplayerGame *game = [[MultiplayerGame alloc] initWithTargetPoints:6
+                                                            startingMoney:100
+                                                                 delegate:biddingViewController];
 
     // Find a match.
-    [[GCHelper sharedInstance] findMatchWithMinPlayers:2 maxPlayers:2 viewController:self delegate:game];
+    [[GCHelper sharedInstance] findMatchWithMinPlayers:2
+                                            maxPlayers:2
+                                        viewController:self
+                                              delegate:game];
 }
 
 @end
