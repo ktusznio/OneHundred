@@ -14,6 +14,7 @@
 - (void)matchStarted;
 - (void)matchEnded;
 - (void)match:(GKMatch *)match didReceiveData:(NSData *)data fromPlayer:(NSString *)playerID;
+- (void)receivedInvite;
 
 @end
 
@@ -28,6 +29,8 @@
 @property (strong, nonatomic) UIViewController *presentingViewController;
 @property (strong, nonatomic) GKMatch *match;
 @property (strong, nonatomic) id <GCHelperDelegate> delegate;
+@property (strong, nonatomic) GKInvite *pendingInvitation;
+@property (strong, nonatomic) NSArray *pendingPlayersToInvite;
 
 + (GCHelper *)sharedInstance;
 - (void)authenticateLocalUser;

@@ -120,4 +120,8 @@
     }
 }
 
+- (void)receivedInvite {
+    NSLog(@"Received invitation.");
+}
+
 @end

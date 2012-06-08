@@ -12,7 +12,7 @@
 
 @implementation GCHelper
 
-@synthesize delegate, gameCenterAvailable, players, presentingViewController, match;
+@synthesize delegate, gameCenterAvailable, players, presentingViewController, match, pendingInvitation, pendingPlayersToInvite;
 
 #pragma mark Initialization
 
@@ -60,6 +60,14 @@ static GCHelper *sharedHelper = nil;
     if ([[GKLocalPlayer localPlayer] isAuthenticated] && !userAuthenticated) {
         NSLog(@"Authentication changed: player authenticated.");
         userAuthenticated = YES;
+
+        // Set up an invitation handler.
+        [[GKMatchmaker sharedMatchmaker] setInviteHandler:^(GKInvite *invitation, NSArray *playersToInvite) {
+            NSLog(@"Received invitation.");
+            [self setPendingInvitation:invitation];
+            [self setPendingPlayersToInvite:playersToInvite];
+            [delegate receivedInvite];
+        }];
     } else if (![[GKLocalPlayer localPlayer] isAuthenticated] && userAuthenticated) {
         NSLog(@"Authentication changed: player not authenticated");
         userAuthenticated = NO;
@@ -116,14 +124,25 @@ static GCHelper *sharedHelper = nil;
     [self setMatch:nil];
     [self setPresentingViewController:viewController];
     [self setDelegate:aDelegate];
+
     [presentingViewController dismissModalViewControllerAnimated:NO];
 
-    GKMatchRequest *request = [[GKMatchRequest alloc] init];
-    [request setMinPlayers:minPlayers];
-    [request setMaxPlayers:maxPlayers];
+    GKMatchmakerViewController *matchmakerViewController;
+    if ([self pendingInvitation]) {
+        matchmakerViewController = [[GKMatchmakerViewController alloc] initWithInvite:pendingInvitation];
+    } else {
+        GKMatchRequest *request = [[GKMatchRequest alloc] init];
+        [request setMinPlayers:minPlayers];
+        [request setMaxPlayers:maxPlayers];
+        [request setPlayersToInvite:pendingPlayersToInvite];
 
-    GKMatchmakerViewController *matchmakerViewController = [[GKMatchmakerViewController alloc] initWithMatchRequest:request];
+        matchmakerViewController = [[GKMatchmakerViewController alloc] initWithMatchRequest:request];
+    }
+
     [matchmakerViewController setMatchmakerDelegate:self];
+
+    [self setPendingInvitation:nil];
+    [self setPendingPlayersToInvite:nil];
 
     [presentingViewController presentModalViewController:matchmakerViewController
                                                 animated:YES];
